@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useStore } from './store';
-import { submitPipeline } from './services/pipeline.api';
+import { useStore } from '../store';
+import { submitPipeline } from '../services/pipeline.api';
 
 export const SubmitButton = () => {
   const nodes = useStore((s) => s.nodes);

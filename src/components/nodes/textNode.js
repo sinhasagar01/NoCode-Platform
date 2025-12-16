@@ -1,11 +1,11 @@
 import { useEffect, useState, useRef } from 'react'
 import { useUpdateNodeInternals } from 'reactflow';
 import { BaseNode } from './base/BaseNode'
-import { useAutoResize } from '../hooks/useAutoResize'
-import { useTextVariables } from '../hooks/useTextVariables'
+import { useAutoResize } from '../../hooks/useAutoResize'
+import { useTextVariables } from '../../hooks/useTextVariables'
 import { rightHandle } from './base/node.utils'
 import { getActiveVariable, replaceActiveVariable } from './base/node.utils'
-import { useStore } from '../store'
+import { useStore } from '../../store';
 
 export const TextNode = ({ id, data }) => {
   const [text, setText] = useState(data?.text || '')
@@ -123,23 +123,19 @@ export const TextNode = ({ id, data }) => {
         />
 
         {shouldShowDropdown && (
-          <div style={{
-            position: 'absolute',
-            background: '#fff',
-            border: '1px solid #ccc',
-            zIndex: 10,
-          }}>
-            {candidates.map((c) => (
+          <div className="variable-dropdown">
+            {candidates.map((c, index) => (
               <div
-                key={c}
+                key={index}
+                className="variable-dropdown-item"
                 onClick={() => selectVariable(c)}
-                style={{ padding: '4px', cursor: 'pointer' }}
               >
                 {c}
               </div>
             ))}
           </div>
         )}
+
       </div>
     </BaseNode>
   )

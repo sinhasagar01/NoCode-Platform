@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { BaseNode } from './base/BaseNode';
 import { leftHandle } from './base/node.utils';
-import { useStore } from '../store';
+import { useStore } from '../../store';
 
 
 export const OutputNode = ({ id, data }) => {

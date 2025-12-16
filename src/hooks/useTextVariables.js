@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { extractVariables } from '../nodes/base/node.utils'
+import { extractVariables } from '../components/nodes/base/node.utils'
 
 export const useTextVariables = (text, nodeId) => {
   return useMemo(() => {

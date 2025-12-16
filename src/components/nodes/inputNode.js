@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { BaseNode } from './base/BaseNode';
 import { rightHandle } from './base/node.utils';
-import { useStore } from '../store';
+import { useStore } from '../../store';
 
 
 export const InputNode = ({ id, data }) => {
